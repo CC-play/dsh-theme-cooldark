@@ -6,6 +6,8 @@
 
 不纯黑、不偏暖、不刺眼——画布是中性暗灰，正文是柔和的浅灰。长时间盯对话和代码，眼睛不容易累。
 
+<img src="assets/screenshot-1.png" alt="CoolDark 在 DSH 里的对话界面">
+
 ## 安装
 
 ```sh
