@@ -1,0 +1,47 @@
+{
+  "name": "@local/cooldark",
+  "version": "0.5.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "description": "CoolDark — a soft, low-contrast dark theme for DeepSeek Harness (DSH).",
+  "keywords": [
+    "dsh",
+    "dsh-bundle",
+    "theme"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "package.json",
+    "locale/*.json",
+    "icon.svg",
+    "LICENSE",
+    "README.md",
+    "docs/*.md"
+  ],
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.7-rc.1"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme"
+      ]
+    }
+  }
+}

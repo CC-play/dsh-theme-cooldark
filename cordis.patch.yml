@@ -1,0 +1,5 @@
+# CoolDark bundle patch — inserts one Host/Client plugin row into the profile.
+# `name` must equal the package name; `id` is the row id shown in Plugin Manager.
+- insert:
+    - id: cooldark
+      name: '@local/cooldark'
