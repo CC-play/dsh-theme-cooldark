@@ -10,11 +10,13 @@
 
 ## 安装
 
+**Web 端**
+
 ```sh
 dsh plugin add github:CC-play/dsh-theme-cooldark
 ```
 
-要装到指定 profile，加 `--profile`：
+**桌面端**
 
 ```sh
 dsh plugin --profile desktop add github:CC-play/dsh-theme-cooldark
@@ -42,22 +44,6 @@ dsh plugin --profile desktop add github:CC-play/dsh-theme-cooldark
 
 1. **没彻底重启。** 进程退干净再开，包含托盘图标。
 2. **开关过又开回来。** 市场的「关 → 开」只热挂载 Host 半边，不会补发浏览器端模块，按 `Ctrl+R` 刷新页面。
-3. **`exports` 被裁剪过。** 如果你改过 `package.json` 的 `exports`，`./client` 和 `./cordis.patch.yml` 必须还在里面——少了任何一个，插件会静默失效、不报错。跑 `node dev/verify-manifest.mjs` 能查。
-
-## 想改配色
-
-配色分层集中在 `client.js`，最上层是命名色原子，往下是语义角色，再往下才是 token 映射——**不要往底层写死 hex**。具体结构、注入边界和一堆踩过的坑都在 [docs/development.md](docs/development.md)。
-
-改完跑一下：
-
-```sh
-node dev/verify-manifest.mjs   # 清单自检
-node dev/smoke.mjs             # 无浏览器冒烟测试
-```
-
-## 已知限制
-
-标题栏与侧栏分色是注入 `::before` 实现的，右上角的原生窗口按钮仍跟侧栏色。
 
 ## 许可
 
