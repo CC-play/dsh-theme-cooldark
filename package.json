@@ -5,6 +5,14 @@
   "private": true,
   "type": "module",
   "description": "CoolDark — a soft, low-contrast dark theme for DeepSeek Harness (DSH).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CC-play/dsh-theme-cooldark.git"
+  },
+  "homepage": "https://github.com/CC-play/dsh-theme-cooldark#readme",
+  "bugs": {
+    "url": "https://github.com/CC-play/dsh-theme-cooldark/issues"
+  },
   "keywords": [
     "dsh",
     "dsh-bundle",
