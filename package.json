@@ -33,8 +33,10 @@
     "package.json",
     "locale/*.json",
     "icon.svg",
+    "assets/*.png",
     "LICENSE",
     "README.md",
+    "CHANGELOG.md",
     "docs/*.md"
   ],
   "dsh": {
