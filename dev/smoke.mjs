@@ -21,7 +21,7 @@ import vm from "node:vm";
 const here = dirname(fileURLToPath(import.meta.url));
 const source = readFileSync(join(here, "..", "client.js"), "utf8");
 
-const MODULE_ID = "@local/cooldark";
+const MODULE_ID = JSON.parse(readFileSync(join(here, "..", "package.json"), "utf8")).name;
 const THEME_ID = "cooldark";
 const COLOR_SCHEME = "dark";
 const FALLBACK_THEME = "system";

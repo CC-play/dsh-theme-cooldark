@@ -14,7 +14,7 @@ DSH 的插件体系是 cordis bundle：一个普通 npm 包 + 一份 `cordis.pat
 | 文件 | 作用 |
 |---|---|
 | `package.json` | bundle 清单：`dsh.bundle.patch` + `dsh.client`（`platform: web`、`immediately`、依赖 `@deepseek-ai/dsh-client-ui-theme`） |
-| `cordis.patch.yml` | 往 profile 里插入一行插件：`id: cooldark`，`name: @local/cooldark` |
+| `cordis.patch.yml` | 往 profile 里插入一行插件：`id: cooldark`，`name: dsh-theme-cooldark` |
 | `index.js` | Host 半边，`export function apply() {}` 故意为空（主题不需要 Host 逻辑） |
 | `client.js` | **核心**。分层常量（CONFIG / 色阶原子 / PALETTE / TOKENS / STYLES）→ `ctx.theme.register()` → 自动启用 |
 | `locale/{zh,en}.json` | 插件管理面板里显示的标题与描述 |
@@ -439,8 +439,8 @@ node dev/verify-manifest.mjs     # 应该全 ok；有 FAIL 就先修清单
 判断方法：`.dsh-market/log.ndjson` 里出现
 
 ```
-"@local/cooldark: no loader entry matched"
-"@local/cooldark: re-added to dsh.profile.bundles, which nothing was composing (#696)"
+"dsh-theme-cooldark: no loader entry matched"
+"dsh-theme-cooldark: re-added to dsh.profile.bundles, which nothing was composing (#696)"
 ```
 
 就是这套症状。**热开关不会重新组合 bundle**，必须彻底退出进程再启动（托盘图标也要退，刷新页面不够）。
@@ -555,7 +555,7 @@ $env:ELECTRON_RUN_AS_NODE='1'
   --profile <名字> --dump-config
 ```
 
-输出里搜 `# == @local/cooldark`：出现就说明 bundle 层认到了这个包；不出现就还在上一类问题里。
+输出里搜 `# == dsh-theme-cooldark`：出现就说明 bundle 层认到了这个包；不出现就还在上一类问题里。
 （桌面自带的 `desktop` profile 被 Electron 独占，会被拒绝——复制一份 profile 或换个 profile 名即可。）
 
 ## 验证 / 调试

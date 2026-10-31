@@ -41,7 +41,7 @@
  */
 
 window.__ModuleLoader__.load({
-  id: '@local/cooldark',
+  id: 'dsh-theme-cooldark',
   factory() {
     // =====================================================================
     // 1. CONFIG

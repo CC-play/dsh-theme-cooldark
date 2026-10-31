@@ -2,4 +2,4 @@
 # `name` must equal the package name; `id` is the row id shown in Plugin Manager.
 - insert:
     - id: cooldark
-      name: '@local/cooldark'
+      name: 'dsh-theme-cooldark'
